@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import Video from "./Video.js";
 import CommentList from "./CommentList.js";
 import CommentsFilter from "./CommentsFilter.js";
+import SearchComments from "./SearchComments.js";
 
 function App() {
   console.log("Here's your data:", video);
@@ -10,6 +11,8 @@ function App() {
   const [upvotes, setUpvotes] = useState(video.upvotes)
   const [downvotes, setDownvotes] = useState(video.downvotes)
   const [hideComments, setHideComments] = useState(true);
+  const [text, setText] = useState("");
+
 
   function handleUpvotesClick() {
     setUpvotes(upvotes + 1);
@@ -25,7 +28,9 @@ function App() {
 
   const filteredComments = video.comments.filter((comment) => {
     if (hideComments === true) {
-      return true;
+      if (comment.user.toLowerCase().includes(text.toLowerCase())) {
+        return true;
+      }
     } else {
       return false;
     }
@@ -44,6 +49,11 @@ function App() {
       <CommentsFilter
         hideComments={hideComments}
         onHideComment={onHideComment}
+      />
+      <br></br> 
+      <SearchComments
+        text={text}
+        setText={setText}
       />
       <CommentList 
         comments={filteredComments}
