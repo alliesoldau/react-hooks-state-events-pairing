@@ -29,7 +29,7 @@ function App() {
   const filteredComments = video.comments.filter((comment) => {
     if (hideComments === true) {
       if (comment.user.toLowerCase().includes(text.toLowerCase())) {
-        return true;
+          return true;
       }
     } else {
       return false;

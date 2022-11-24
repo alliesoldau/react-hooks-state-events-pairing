@@ -1,6 +1,6 @@
 import React from 'react';
 
-function Comment({ user, comment, upvotes, downvotes, handleUpvotesClick, handleDownvotesClick }) {
+function Comment({ user, comment, upvotes, downvotes, handleUpvotesClick, handleDownvotesClick, handleDeleteClick }) {
 
     return(
         <div className="comment">
