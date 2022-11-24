@@ -10,3 +10,20 @@ body {
 .App {
   text-align: center;
 }
+
+.user {
+  font-weight: bold;
+  color: purple;
+  font-size: larger;
+  margin: 2px;
+}
+
+.text {
+  font-style: italic;
+  color: green;
+}
+
+.upvotes, .downvotes {
+  color: grey;
+  font-size: smaller;
+}

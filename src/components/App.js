@@ -9,7 +9,7 @@ function App() {
 
   const [upvotes, setUpvotes] = useState(video.upvotes)
   const [downvotes, setDownvotes] = useState(video.downvotes)
-  const [hideComments, setHideComments] = useState(false);
+  const [hideComments, setHideComments] = useState(true);
 
   function handleUpvotesClick() {
     setUpvotes(upvotes + 1);
@@ -43,7 +43,6 @@ function App() {
       <br></br> 
       <CommentsFilter
         hideComments={hideComments}
-        setHideComments={setHideComments}
         onHideComment={onHideComment}
       />
       <CommentList 
